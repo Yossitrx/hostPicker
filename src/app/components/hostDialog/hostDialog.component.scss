@@ -1,0 +1,47 @@
+:host ::ng-deep {
+
+  .dialog-action{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .os-toggle {
+    display: flex;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+  }
+  .form-field{
+    margin-right: 20px;
+    width: 100%;
+  }
+
+  .chevrons {
+    width: 100px;
+  }
+
+  .mat-list-text {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .list-icon {
+    margin-right: 10px !important;
+  }
+
+  .a-content{
+    display: flex;
+    align-items: center;
+  }
+
+}

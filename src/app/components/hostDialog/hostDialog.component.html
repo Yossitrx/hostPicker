@@ -1,0 +1,51 @@
+<div *ngIf="viewReady">
+  <h1 mat-dialog-title>Hosts dialog</h1>
+
+  <div class="icon-container">
+      <os-toggle class="os-toggle"
+                 [icons]="data.icons"
+                 [osName]="data.osName"
+                 (onToggleChange)="toggleOsName($event)">
+      </os-toggle>
+  </div>
+
+  <os-status
+    [status]="data.status"
+    (onStatusChange)="statusChange($event)">
+  </os-status>
+
+
+  <form class="form">
+    <mat-form-field class="form-field">
+      <input type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl">
+    </mat-form-field>
+    <chevrons class="chevrons" (onPageResult)="pageResult($event)"></chevrons>
+  </form>
+
+  <mat-selection-list #triggerHostName
+                      (selectionChange)="onSelect($event, triggerHostName.selectedOptions)">
+    <mat-list-option *ngFor="let option of filteredOptions | async"
+                     [value]="option">
+      <div class="a-content">
+        <mat-icon svgIcon="{{option.identity}}"
+                  aria-hidden="false"
+                  class="list-icon"></mat-icon>
+        {{option.name}}
+      </div>
+      <div>
+        Last seen: {{option.lastSeen}}
+      </div>
+      <div>
+        IP: {{option.ip}}
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+
+  <p>
+    Hosts selected: {{triggerHostName.selectedOptions.selected.length}}
+  </p>
+
+  <div class="dialog-action" mat-dialog-actions>
+    <button mat-button (click)="onDoneClick()">Done</button>
+  </div>
+</div>

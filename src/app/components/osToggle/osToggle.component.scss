@@ -1,0 +1,9 @@
+:host ::ng-deep {
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  .icons {
+    margin-left: 15px;
+  }
+}

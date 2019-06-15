@@ -1,0 +1,7 @@
+<div class="status-container">
+  <mat-radio-group [(ngModel)]="status"
+                   (change)="statusChange(status)">
+    <mat-radio-button class="radio" value="0">Offline</mat-radio-button>
+    <mat-radio-button class="radio" value="1">Online</mat-radio-button>
+  </mat-radio-group>
+</div>

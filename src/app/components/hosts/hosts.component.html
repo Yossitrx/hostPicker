@@ -1,0 +1,36 @@
+<div class="container">
+  <header class="grid-header-section">
+    <span class="head-title">Host Picker</span>
+  </header>
+  <section class="grid-body-section">
+    <div class="box-container" *ngFor="let system of systems">
+      <mat-card class="note-tile-container">
+        <mat-card-header class="header-container">
+          <mat-card-title>{{system.name}}</mat-card-title>
+          <mat-card-subtitle>
+            <div class="os-icon">
+              <div *ngFor="let icon of system.icons" class="">
+                <mat-icon svgIcon="{{icon}}"
+                          aria-hidden="false"
+                          aria-label="Example thumbs up SVG icon">
+                </mat-icon>
+              </div>
+            </div>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>HOSTS: </p>
+          <div *ngFor="let host of system.hosts"
+               (click)="removeHost(host)"
+               class="host-list">
+            {{host.name}}
+          </div>
+        </mat-card-content>
+        <button class="add-host" (click)="openDialog(system)">ADD HOSTS</button>
+      </mat-card>
+    </div>
+  </section>
+</div>
+
+
+

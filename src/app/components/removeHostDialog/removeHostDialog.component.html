@@ -1,0 +1,11 @@
+<div>
+  <h1 mat-dialog-title>Delete Host</h1>
+  <h4>You are about to delete host from list:</h4>
+  <div>
+    {{host.name}}
+  </div>
+  <div class="dialog-action" mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button (click)="onDoneClick(host)">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="title">Operating system:</div>
+<mat-button-toggle-group
+  class="icons"
+  value="{{osName}}">
+  <mat-button-toggle (change)="toggleOsName(icon)"
+                     *ngFor="let icon of icons" value="{{icon}}">
+    <mat-icon svgIcon="{{icon}}"
+              aria-hidden="false"
+              aria-label="Example thumbs up SVG icon">
+    </mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
